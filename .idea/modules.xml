@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/express-oauth2.iml" filepath="$PROJECT_DIR$/express-oauth2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth2backend/oauth2backend.iml" filepath="$PROJECT_DIR$/oauth2backend/oauth2backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oauth2frontend/oauth2frontend.iml" filepath="$PROJECT_DIR$/oauth2frontend/oauth2frontend.iml" />
+    </modules>
+  </component>
+</project>
