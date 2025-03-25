@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "build": "tsc",
+    "start": "node ./bin/app.js",
+    "dev": "nodemon ./bin/app.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -17,7 +19,7 @@
     "passport": "^0.7.0",
     "passport-azure-ad-oauth2": "^0.0.4"
   },
-  "main": "app.js",
+  "main": "app.ts",
   "keywords": [],
   "author": "",
   "license": "ISC",

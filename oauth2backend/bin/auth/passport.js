@@ -23,8 +23,8 @@ passport_1.default.use(new passport_azure_ad_oauth2_1.Strategy({
     clientID: env_1.config.CLIENT_ID,
     clientSecret: env_1.config.CLIENT_SECRET,
     callbackURL: env_1.config.CALLBACK_URL,
-    authorizationURL: `https://login.microsoftonline.com/${env_1.config.TERNANT_ID}/oauth2/authorize`,
-    tokenURL: `https://login.microsoftonline.com/${env_1.config.TERNANT_ID}/oauth2/token`,
+    authorizationURL: `https://login.microsoftonline.com/${env_1.config.TENANT_ID}/oauth2/authorize`,
+    tokenURL: `https://login.microsoftonline.com/${env_1.config.TENANT_ID}/oauth2/token`,
 }, (accessToken, refreshToken, params, profile, done) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const user = jsonwebtoken_1.default.decode(params.id_token);

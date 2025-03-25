@@ -5,6 +5,7 @@ import { Strategy as AzureStrategy } from "passport-azure-ad-oauth2";
 import jwt from "jsonwebtoken";
 import { config } from "../config/env";
 
+
 // Setup Passport Azure OAuth strategy for authentication
 passport.use(
     new AzureStrategy(
@@ -12,8 +13,8 @@ passport.use(
             clientID: config.CLIENT_ID,
             clientSecret: config.CLIENT_SECRET,
             callbackURL: config.CALLBACK_URL,
-            authorizationURL: `https://login.microsoftonline.com/${config.TERNANT_ID}/oauth2/authorize`,
-            tokenURL: `https://login.microsoftonline.com/${config.TERNANT_ID}/oauth2/token`,
+            authorizationURL: `https://login.microsoftonline.com/${config.TENANT_ID}/oauth2/authorize`,
+            tokenURL: `https://login.microsoftonline.com/${config.TENANT_ID}/oauth2/token`,
         },
         async (accessToken, refreshToken, params, profile, done) => {
             try {

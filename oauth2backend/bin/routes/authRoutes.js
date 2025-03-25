@@ -12,7 +12,7 @@ router.get("/login", passport_1.default.authenticate("azure_ad_oauth2"));
 // OAuth callback route
 router.get("/callback", passport_1.default.authenticate("azure_ad_oauth2", { failureRedirect: "/login" }), (req, res) => {
     // Redirect user to frontend after successful authentication
-    res.redirect("http://localhost:5173/dashboard");
+    res.redirect("http://localhost:5173/protected");
 });
 // Logout route to clear session
 router.get("/logout", (req, res) => {
@@ -22,5 +22,21 @@ router.get("/logout", (req, res) => {
         }
         res.redirect("http://localhost:5173");
     });
+});
+router.get("/me", (req, res) => {
+    if (req.isAuthenticated()) {
+        res.json({ user: req.user });
+    }
+    else {
+        res.status(401).json({ error: "Not authenticated" });
+    }
+});
+router.get("/test", (req, res) => {
+    if (req.isAuthenticated()) {
+        res.json("You are protected!");
+    }
+    else {
+        res.status(401).json({ error: "You are not protected" });
+    }
 });
 exports.default = router;
